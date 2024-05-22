@@ -1,0 +1,67 @@
+$backgroundColor-main: #755555;
+$backgroundColor-secondary: #8d5f5f;
+$color-main: #c5baba;
+$shadowbox-normal: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+$shadowbox-lifted: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+$font-big: 50px;
+body {
+  font-family: "Poetsen One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  background-color: $backgroundColor-main;
+  color: $color-main;
+}
+.loginContainer {
+  display: flex;
+  justify-content: center;
+  margin-top: 300px;
+  gap: 400px;
+}
+.loginBox {
+  display: flex;
+  justify-content: center;
+  padding: 50px;
+  width: 200px;
+  height: 200px;
+  font-size: $font-big;
+  background-color: $backgroundColor-secondary;
+  align-items: center;
+  box-shadow: $shadowbox-normal;
+  user-select: none;
+  transition: scale 0.5s ease, box-shadow 0.5s ease;
+  border-radius: 50%;
+  &:hover {
+    box-shadow: $shadowbox-lifted;
+    scale: 1.1;
+    cursor: pointer;
+  }
+}
+.button {
+  text-decoration: none;
+  user-select: none;
+  transition: scale 0.5s ease;
+  width: fit-content;
+  &:hover {
+    scale: 1.1;
+    cursor: pointer;
+  }
+}
+.movieCreation {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  background-color: $backgroundColor-secondary;
+  box-shadow: $shadowbox-normal;
+  left: -100px;
+  &:before {
+    content: 'Create movie';
+    position: absolute;
+    left: -10px;
+    width: 100%;
+    height: 100%;
+  }
+}
