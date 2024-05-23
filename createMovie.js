@@ -1,5 +1,5 @@
 export function movieCreation(title, img, seats) {
-    if (title !== '' && img !== '' && seats !== '' && seats < 13 && img.includes('https://') && title.length < 10) {
+    if (title !== '' && img !== '' && seats !== '' && seats < 11 && img.includes('https://') && title.length < 10) {
         const existingMovie = localStorage.getItem(`movie_${title}`);
         if (!existingMovie) {
             const movie = {
@@ -17,8 +17,8 @@ export function movieCreation(title, img, seats) {
         } else {
             console.log('A movie with the same title already exists.');
         }
-    } else if (seats > 12) {
-        alert('Maximum seat capacity is 12! It’s not a big theatre... :(');
+    } else if (seats > 10) {
+        alert('Maximum seat capacity is 10! It’s not a big theatre... :(');
     } else if (!(img.includes('https://')) && title !== '' && seats !== '') {
         alert('Image URL has to be correct. https://...');
     } else if (title.length > 10) {
