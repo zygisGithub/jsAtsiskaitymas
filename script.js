@@ -14,8 +14,6 @@ const singleMovieSeats = document.getElementById('singleMovieSeats')
 
 // Variables
 let removingItem = false
-
-// Variables from local storage
 const userType = localStorage.getItem('userType')
 
 // Imports
@@ -137,7 +135,7 @@ function reserveSeat(movieTitle, seatNumber, reservedBy) {
         saveMovieToLocalStorage(movie)
         displaySeats(movie)
         displayMovies() // Refresh movie list to update seats count
-        console.log(`Reserved seat ${seatNumber + 1} for ${movieTitle} by ${reservedBy}`)
+        // console.log(`Reserved seat ${seatNumber + 1} for ${movieTitle} by ${reservedBy}`)
     }
 }
 
@@ -149,7 +147,7 @@ function cancelReservation(movieTitle, seatNumber) {
         saveMovieToLocalStorage(movie)
         displaySeats(movie)
         displayMovies()
-        console.log(`Cancelled reservation for seat ${seatNumber + 1} for ${movieTitle}`)
+        // console.log(`Cancelled reservation for seat ${seatNumber + 1} for ${movieTitle}`)
     }
 }
 
@@ -192,8 +190,11 @@ function removeMovieFromLocalStorage(title) {
 }
 
 displayMovies()
-singleMovieClose.onclick = () => {
-    setTimeout(() => {
-        singleMovie.style.display = 'none'
-    }, 200)
+if (singleMovie) {
+    singleMovieClose.onclick = () => {
+        setTimeout(() => {
+            singleMovie.style.display = 'none'
+        }, 200)
+    }
 }
+
